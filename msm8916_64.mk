@@ -116,8 +116,12 @@ PRODUCT_PACKAGE_OVERLAYS := $(QCPATH)/qrdplus/Extension/res \
         $(PRODUCT_PACKAGE_OVERLAYS)
         #$(QCPATH)/qrdplus/globalization/multi-language/res-overlay \
 
+ifneq ($(PRODUCT_BRAND),YU)
+PRODUCT_SUPPORTS_VERITY := false
+else
 PRODUCT_SUPPORTS_VERITY := true
 PRODUCT_SYSTEM_VERITY_PARTITION := /dev/block/bootdevice/by-name/system
+endif
 
 # Sensor HAL conf file
 PRODUCT_COPY_FILES += \
