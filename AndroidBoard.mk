@@ -150,8 +150,3 @@ RADIO_FILES := $(shell cd $(radio_dir) ; ls)
 $(foreach f, $(RADIO_FILES), \
 	$(call add-radio-file,radio/$(f)))
 endif
-
-#----------------------------------------------------------------------
-# extra images
-#----------------------------------------------------------------------
-include device/qcom/common/generate_extra_images.mk
